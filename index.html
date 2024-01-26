@@ -42,6 +42,33 @@
         --color-secondary: #000;
         --font-color: #ffffff;
       }
+      .bottom{
+        width: 100%;
+        height: 360px;
+        background-color: black;
+        margin-top: 32px;
+        color: white;
+        
+      }
+      .bottom_inner{
+        width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 36px;
+      }
+      
+@media screen and (max-width: 992px) {
+  .bottom_inner{
+        width: 100%;
+        height: 170%;
+        margin: 0 auto;
+        padding-top: 36px;
+background-color: black;
+      }
+}
+      .bottom_1{
+        text-align: center;
+      }
     </style>
     <script>
       function getCheckoutUrl() {
@@ -1284,7 +1311,16 @@
           </div>
         </div>
       </div>
+      <div class="bottom">
+        <div class="bottom_inner">
+          <p class="bottom_1">GESUNDHEITSHINWEIS: </p><br>
+          <p class="bottom_1">Die Informationen auf dieser Website sind nicht als Ersatz für professionelle medizinische Beratung, Diagnose oder Behandlung von Krankheiten gedacht oder impliziert. Wir übernehmen keine Verantwortung für die Richtigkeit der Informationen, die auf dieser Website enthalten oder über sie verfügbar sind, und diese Informationen können ohne vorherige Ankündigung geändert werden.</p>
+          <br><p class="bottom_1">Nehmen Sie niemals Änderungen an Ihrer Medikation, Ihrem Tagesablauf, Ihrer Ernährung, Ihrem Schlafplan oder Ihrem Training vor, ohne vorher Ihren Arzt oder andere medizinische Fachleute zu konsultieren. </p>
+          <br><p class="bottom_1">MISSACHTEN SIE NIEMALS DEN RAT EINES ARZTES ODER ZÖGERN SIE NICHT, EINEN ARZT AUFZUSUCHEN, NUR WEIL SIE ETWAS AUF DIESER WEBSITE GELESEN HABEN ODER AUF SIE ZUGEGRIFFEN HABEN.</p>
+        
+        </div></div>
     </footer>
+    
     <style>
       footer.footer {
         background: var(--color-secondary);
