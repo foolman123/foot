@@ -280,7 +280,7 @@ background-color: black;
                 height="33"
             /></a>
             <div class="btn-txt">
-              <p class="btn-text1">Schiffe von<span>24. Januar</span></p>
+              <p class="btn-text1">Schiffe von<span id="dateTime"></span>&emsp;<span id="monthTime"></span></p>
               |
               <p class="btn-text2">
                 <img
@@ -1340,6 +1340,81 @@ background-color: black;
             $(t).attr("href", getCheckoutUrl());
         });
       });
+      Date.prototype.format = function (fmt) {
+      var o = {
+       
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+       
+      };
+      if (/(y+)/.test(fmt))
+        fmt = fmt.replace(
+          RegExp.$1,
+          (this.getFullYear() + "").substr(4 - RegExp.$1.length)
+        );
+      for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt))
+          fmt = fmt.replace(
+            RegExp.$1,
+            RegExp.$1.length == 1
+              ? o[k]
+              : ("00" + o[k]).substr(("" + o[k]).length)
+          );
+      return fmt;
+    };
+    var Month=new Date().getMonth();
+    var a
+    switch(Month) {
+        case 0:
+           
+           a="Januar"
+            break ;
+        case 1:
+          a="Februar";
+            break ;
+        case 2:
+           a="März";
+            break ;
+        case 3:
+        a="April";
+            break ;
+        case 4:
+        a="Mai";
+            break ;
+        case 5:
+        a="June";
+            break ;
+        case 6:
+        a="Juni";
+            break ;
+        case 7:
+        a="August";
+            break ;
+        case 8:
+        a="September";
+            break ;
+        case 9:
+        a="Oktober";
+            break ;
+        case 10:
+        a="November";
+            break ;
+        case 11:
+        a="Dezember";
+            break ;
+           
+    }
+    setInterval(
+      "document.getElementById('dateTime').innerHTML = new Date().getDate();",
+      // "document.getElementById('monthTime').innerHTML = a;",
+      1000
+    );
+    setInterval(
+      // "document.getElementById('dateTime').innerHTML = new Date().getDate();",
+      "document.getElementById('monthTime').innerHTML = a;",
+      1000
+    );
+
     </script>
     <noscript
       ><iframe
